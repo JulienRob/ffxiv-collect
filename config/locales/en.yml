@@ -134,6 +134,11 @@ en:
     male: "Hide Male"
   home: "Home"
   how_to_obtain: "How to obtain"
+  instances:
+    dungeons: "Dungeons"
+    raids: "Raids"
+    title: "Instances"
+    trials: "Trials"
   item: "Item"
   journal: "Journal"
   leaderboards:

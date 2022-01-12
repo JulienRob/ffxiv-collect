@@ -1,0 +1,9 @@
+<div class="d-flex flex-wrap justify-content-center category-buttons mb-2">
+  <button type="button" class="btn btn-dark bold shadow-none mb-1<%= ' active' unless selected > 0 %>" id="0">
+    <%= t('all.title') %>
+  </button>
+  <% @categories.each do |category, id| %>
+    <button type="button" class="btn btn-dark shadow-none mb-1<%= ' active' if category == selected %>"
+                          id="category-<%= id %>"><%= t("instances.#{category.downcase}") %></button>
+  <% end %>
+</div>

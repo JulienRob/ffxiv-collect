@@ -12,6 +12,12 @@ module CollectionsHelper
     image_tag('blank.png', class: "#{model} #{model}-#{id}")
   end
 
+  def source_collectable_sprite(source)
+    type = source.collectable_type.downcase
+    type = "#{type}s-small" if type =~ /(mount|minion)/
+    image_tag('blank.png', class: "#{type} #{type}-#{source.collectable_id}")
+  end
+
   def character_selected?
     @character.present?
   end

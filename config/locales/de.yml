@@ -130,6 +130,11 @@ de:
     male: "Verberge Männlich"
   home: "Start"
   how_to_obtain: "Wodurch erhältlich"
+  instances:
+    dungeons:
+    raids:
+    title:
+    trials:
   item: "Objekt"
   journal: "Journal"
   leaderboards:

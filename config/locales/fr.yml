@@ -134,6 +134,11 @@ fr:
     male: "Masquer les objets pour homme"
   home: "Accueil"
   how_to_obtain: "Comment l'obtenir"
+  instances:
+    dungeons:
+    raids:
+    title:
+    trials:
   item: "Objet"
   journal: "Journal"
   leaderboards:

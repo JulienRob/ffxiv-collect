@@ -4,13 +4,21 @@ namespace :instances do
     puts 'Creating instances'
 
     count = Instance.count
+
+    orders = XIVData.sheet('InstanceContent', raw: true).each_with_object({}) do |instance, h|
+      h[instance['#']] = instance['Order']
+    end
+
     instances = XIVData.sheet('ContentFinderCondition', locale: 'en').each_with_object({}) do |instance, h|
       next unless instance['Name'].present? && Instance.valid_types.include?(instance['ContentType'].singularize)
 
-        # Use the Content ID as the Instance ID so we can sync with the ID used by the DB sites
-        h[instance['#']] = { id: XIVData.related_id(instance['Content']),
-                             content_type: instance['ContentType'],
-                             name_en: sanitize_name(instance['Name']) }
+      # Use the Content ID as the Instance ID so we can sync with the ID used by the DB sites
+      id = XIVData.related_id(instance['Content'])
+
+      h[instance['#']] = { id: id,
+                           content_type: instance['ContentType'],
+                           name_en: sanitize_name(instance['Name']),
+                           order: orders[id] }
     end
 
     %w(de fr ja).each do |locale|

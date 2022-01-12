@@ -85,7 +85,7 @@ a.sort_link i {
   padding-left: 4px;
 }
 
-a.name, a.btn {
+a.name, a.btn, td.name > a {
   text-decoration: none;
 }
 
@@ -219,7 +219,7 @@ hr {
     width: auto;
 
     @media (min-width: 1000px) {
-      min-width: 750px;
+      min-width: 900px;
     }
   }
 }
@@ -422,7 +422,7 @@ input[type="checkbox"] {
 }
 
 .collection:not(.comparing) {
-  tr.owned:not(.no-fade) > td {
+  tr.owned:not(.no-fade) > td, a.owned {
     opacity: 0.4;
   }
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_29_180129) do
+ActiveRecord::Schema.define(version: 2022_01_12_005153) do
 
   create_table "achievement_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name_en", null: false
@@ -394,8 +394,10 @@ ActiveRecord::Schema.define(version: 2021_12_29_180129) do
     t.string "content_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "order", null: false
     t.index ["content_type"], name: "index_instances_on_content_type"
     t.index ["name_en"], name: "index_instances_on_name_en"
+    t.index ["order"], name: "index_instances_on_order"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
